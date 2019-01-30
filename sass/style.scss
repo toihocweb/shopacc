@@ -1,0 +1,105 @@
+body, html{ 
+  background: #F3EFE0;
+  color: #333;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.flex{
+  display: flex;
+}
+
+.f-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container{
+  max-width: 1200px;
+  margin: auto;
+}
+
+$mainColor: #4CAF50;
+header{
+  padding: 10px 0px;
+  .logo{
+    span{
+      color: $mainColor;
+    }
+  }
+  .nav{
+    a{
+      padding: 10px 12px;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: $mainColor;
+        transition: 0.4s;
+      }
+      &:hover{
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.list-accounts{
+  max-width: 100%;
+  margin-top: 50px;
+  background: white;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+  grid-gap: 10px;
+  .item{
+    border: 1px solid $mainColor;
+    box-shadow: 0 0 4px -2px #333;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: 0.4s;
+    &:hover{
+      box-shadow: 0 0 20px -2px #333;
+    }
+    .info-account{
+      margin-left: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .ttl{
+        font-size: 1.5rem;
+      }
+      .date{
+        color: #999;
+        grid-column: 1/3;
+        font-size: 1rem; 
+      }
+      .acc-bot{
+        grid-column: 1/3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .buy{
+          cursor: pointer;
+          padding: 5px 15px;
+          background: $mainColor;
+          color: white;
+          border-radius: 3px;
+          font-size: 17px;
+        }
+        .stock{
+          font-size: 0.9rem;
+        }
+      }
+     
+    }
+
+  }
+}
